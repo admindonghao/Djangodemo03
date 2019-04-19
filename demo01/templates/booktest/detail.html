@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情页</title>
+</head>
+<body>
+    <div>
+        <h1>详情页</h1>
+        <h3>书名：{{book.btitle}}</h3>
+        <ul>
+            <li>人物  ------   性别    -----    武功、经历  </li>
+            {% for hero in book.heroinfo_set.all %}
+                <li>{{hero.hname}}  ------  {{hero.hgender}}  -----   {{hero.hconent}}</li>
+            {% empty %}
+                <h6>暂无人物</h6>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'booktest:list' %}">返回列表页</a>
+    </div>
+</body>
+</html>
