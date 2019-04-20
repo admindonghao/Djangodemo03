@@ -9,11 +9,17 @@
         <h1>问题列表页</h1>
         <ul>
             {% for poll in polls %}
-                <li><a href="{% url 'polls:detail' poll.id %}">{{poll.issue}}</a></li>
+                <li>
+                    <a href="{% url 'polls:detail' poll.id %}">{{poll.issue}}  </a>
+                    <a href="{% url 'polls:deleteiss' poll.id%}">删除  </a>
+                    <a href="{% url 'polls:update' poll.id%}">修改</a>
+                </li>
             {% empty %}
                 <h4>还没有问题</h4>
             {% endfor %}
         </ul>
+        <a href="{% url 'polls:addw' %}">发布问题</a>
+        <a href="{% url 'polls:result' %}">投票结果</a>
         <a href="{% url 'polls:index' %}">返回首页</a>
     </div>
 </body>

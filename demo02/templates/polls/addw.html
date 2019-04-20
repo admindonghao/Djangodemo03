@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布问题</title>
+</head>
+<body>
+    <div>
+        <h1>请发布问题</h1>
+        <form action="{% url 'polls:addws' %}" method="post">
+            问题：<input type="text" name="wen">
+            <input type="submit" value="发布">
+        </form>
+    </div>
+</body>
+</html>

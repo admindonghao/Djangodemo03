@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加选项</title>
+</head>
+<body>
+    <div>
+        <h1>添加新的选项</h1>
+        <form action="{% url 'polls:createchs' iss.id%}" method="post">
+            选项：<input type="text" name="option">
+            <input type="submit" value="添加">
+        </form>
+    </div>
+</body>
+</html>

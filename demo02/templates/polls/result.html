@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结果页面</title>
+    {% load static from staticfiles %}
+    <link rel="stylesheet" href="{% static '/css/tongyong.css' %}">
+</head>
+<body>
+    <div>
+        <h1>全部结果</h1>
+        <ul>
+            {% for s in cl %}
+                <li>{{s.is_issue}} -- {{s.options}} -- {{s.number}}</li>
+            {% empty %}
+                <h4>结果无法显示</h4>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'polls:list' %}">返回列表</a>
+    </div>
+</body>
+</html>

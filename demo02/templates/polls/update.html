@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改问题</title>
+</head>
+<body>
+    <div>
+        <h1>修改问题</h1>
+        <form action="{% url 'polls:updates' iss.id%}" method="post">
+            问题：<input type="text" name="issue" value="{{iss.issue}}">
+            <input type="submit" value="更改">
+        </form>
+    </div>
+</body>
+</html>

@@ -10,12 +10,16 @@
         <ul>
             <form action="/polls/details/{{poll.id}}/" method="post">
                 {% for ch in poll.chiocelist_set.all %}
-                    <li><input type="radio" name="poll" value="{{ch.id}}">{{ch.options}}</li>
+                    <li>
+                        <input type="radio" name="poll" value="{{ch.id}}">{{ch.options}}
+                        <a href="{% url 'polls:deletec' ch.id%}">删除此选项</a>
+                    </li>
                 {% empty %}
                     <h4>没有选项</h4>
                 {% endfor %}
                 <input type="submit" value="确定">
             </form>
+            <a href="{% url 'polls:createch' poll.id%}">添加选项</a>
             <a href="{% url 'polls:list' %}">返回列表</a>
         </ul>
     </div>
