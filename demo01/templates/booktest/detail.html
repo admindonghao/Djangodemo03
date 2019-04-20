@@ -11,11 +11,15 @@
         <ul>
             <li>人物  ------   性别    -----    武功、经历  </li>
             {% for hero in book.heroinfo_set.all %}
-                <li>{{hero.hname}}  ------  {{hero.hgender}}  -----   {{hero.hconent}}</li>
+                <li>{{hero.hname}}  ------  {{hero.hgender}}  -----   {{hero.hconent}}
+                    <a href="{% url 'booktest:update' hero.id%}">编辑</a>
+                    <a href="{% url 'booktest:deletehero' hero.id%}">删除</a>
+                </li>
             {% empty %}
                 <h6>暂无人物</h6>
             {% endfor %}
         </ul>
+        <a href="{% url 'booktest:create' book.id %}">添加人物</a>
         <a href="{% url 'booktest:list' %}">返回列表页</a>
     </div>
 </body>

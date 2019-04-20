@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新英雄信息</title>
+</head>
+<body>
+    <div>
+        <form action="{% url 'booktest:updates' hero.id %}" method="post">
+            英雄名：<input type="text" value="{{hero.hname}}" name="name"><br>
+            性别：<input type="text" value="{{hero.hgender}}" name="gender"><br>
+            武功、经历：<input type="text" value="{{hero.hconent}}" name="conent"><br>
+            <input type="submit" value="更改">
+        </form>
+    </div>
+</body>
+</html>

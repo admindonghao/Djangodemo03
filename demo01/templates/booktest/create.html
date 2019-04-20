@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加人物</title>
+</head>
+<body>
+    <div>
+        <form action="{% url 'booktest:creates' book.id%}" method="post">
+            人名：<input type="text" name="name"><br>
+            性别：<input type="text" name="gender"><br>
+            武功、经历：<input type="text" name="conent"><br>
+            <input type="submit" value="添加">
+        </form>
+    </div>
+</body>
+</html>
